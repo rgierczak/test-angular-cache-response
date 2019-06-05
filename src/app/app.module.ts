@@ -3,16 +3,16 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { FirstComponent } from './pages/first/first.component';
-import { SecondComponent } from './pages/second/second.component';
-import { ThirdComponent } from './pages/third/third.component';
+import { FirstPageComponent } from './components/first-page/first-page.component';
+import { SecondPageComponent } from './components/second-page/second-page.component';
+import { ThirdPageComponent } from './components/third-page/third-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FirstComponent,
-    SecondComponent,
-    ThirdComponent
+    FirstPageComponent,
+    SecondPageComponent,
+    ThirdPageComponent
   ],
   imports: [
     BrowserModule,

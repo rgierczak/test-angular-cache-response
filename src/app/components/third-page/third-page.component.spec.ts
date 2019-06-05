@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ThirdComponent } from './third.component';
+import { ThirdPageComponent } from './third-page.component';
 
-describe('ThirdComponent', () => {
-  let component: ThirdComponent;
-  let fixture: ComponentFixture<ThirdComponent>;
+describe('ThirdPageComponent', () => {
+  let component: ThirdPageComponent;
+  let fixture: ComponentFixture<ThirdPageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ThirdComponent ]
+      declarations: [ ThirdPageComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ThirdComponent);
+    fixture = TestBed.createComponent(ThirdPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
