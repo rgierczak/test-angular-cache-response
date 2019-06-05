@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { of } from 'rxjs';
-import { tap } from 'rxjs/internal/operators';
 
 export interface UserResponse {
   id: number;
@@ -17,28 +16,25 @@ const USER_URL = 'https://jsonplaceholder.typicode.com/todos/1';
   providedIn: 'root'
 })
 export class UserService {
-
   private cachedUserResponse: UserResponse = null;
 
   constructor(private http: HttpClient) {
   }
 
-  public fetchUser(): Promise<UserResponse> {
+  public async fetchUserWithCache(): Promise<UserResponse> {
     const userResponse = this.getCachedResponse();
 
     if (userResponse) {
       return of(userResponse).toPromise();
     }
 
-    return this.http
-      .get(USER_URL)
-      .pipe(tap((response: UserResponse) => {
-        this.setCachedResponse(response);
-      }))
-      .toPromise().catch(error => {
-        console.error('fetchUser error: ', error);
-        return error;
-      });
+    const response = await this.fetchUser();
+    this.setCachedResponse(response);
+    return response;
+  }
+
+  public fetchUser(): Promise<UserResponse> {
+    return this.http.get(USER_URL).toPromise() as Promise<UserResponse>;
   }
 
   public clearCachedResponse(): void {

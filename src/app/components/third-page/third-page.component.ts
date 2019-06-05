@@ -14,6 +14,7 @@ export class ThirdPageComponent implements OnInit {
   }
 
   public async ngOnInit(): Promise<void> {
+    // this.userResponse = await this.userService.fetchUserWithCache();
     this.userResponse = await this.userService.fetchUser();
   }
 }

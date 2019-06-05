@@ -14,6 +14,6 @@ export class SecondPageComponent implements OnInit {
   }
 
   public async ngOnInit(): Promise<void> {
-    this.userResponse = await this.userService.fetchUser();
+    this.userResponse = await this.userService.fetchUserWithCache();
   }
 }

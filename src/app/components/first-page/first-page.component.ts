@@ -14,7 +14,7 @@ export class FirstPageComponent implements OnInit {
   }
 
   public async ngOnInit(): Promise<void> {
-    this.userResponse = await this.userService.fetchUser();
+    this.userResponse = await this.userService.fetchUserWithCache();
   }
 
   public clearCache(): void {
