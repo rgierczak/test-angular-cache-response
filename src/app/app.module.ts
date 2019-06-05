@@ -6,19 +6,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { FirstPageComponent } from './components/first-page/first-page.component';
 import { SecondPageComponent } from './components/second-page/second-page.component';
 import { ThirdPageComponent } from './components/third-page/third-page.component';
+import { UserService } from './services/user.service';
+import { HttpClientModule } from '@angular/common/http';
+import { UserComponent } from './components/user/user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FirstPageComponent,
     SecondPageComponent,
-    ThirdPageComponent
+    ThirdPageComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ UserService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {
