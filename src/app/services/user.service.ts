@@ -41,11 +41,11 @@ export class UserService {
     this.cachedUserResponse = null;
   }
 
-  private setCachedResponse(response: UserResponse): void {
+  public setCachedResponse(response: UserResponse): void {
     this.cachedUserResponse = response;
   }
 
-  private getCachedResponse(): UserResponse {
+  public getCachedResponse(): UserResponse {
     return this.cachedUserResponse;
   }
 
