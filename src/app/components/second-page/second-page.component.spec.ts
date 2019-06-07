@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { SecondPageComponent } from './second-page.component';
+import { UserComponent } from '../user/user.component';
 
 describe('SecondPageComponent', () => {
   let component: SecondPageComponent;
@@ -8,7 +10,13 @@ describe('SecondPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SecondPageComponent ]
+      imports: [
+        HttpClientTestingModule
+      ],
+      declarations: [
+        SecondPageComponent,
+        UserComponent
+      ]
     })
     .compileComponents();
   }));
